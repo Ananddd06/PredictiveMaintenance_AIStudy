@@ -1,10 +1,7 @@
-
-
-I'll create a comprehensive README.md file for your GitHub repository based on the presentation content.
-
 # A Predictive Maintenance Approach in Manufacturing Systems via AI-based Early Failure Detection
 
 ## 📋 Table of Contents
+
 - [Project Overview](#project-overview)
 - [Problem Statement](#problem-statement)
 - [Project Objectives](#project-objectives)
@@ -45,18 +42,21 @@ Manufacturing systems face several critical challenges:
 ## 🔧 Methodology
 
 ### Data Collection & Preprocessing
+
 - Dataset: AI4I 2020 Predictive Maintenance Dataset
 - 10,000 records with features simulating real-world manufacturing scenarios
 - Severely unbalanced data, with only 3.39% failures (339 instances)
 - Key Features: Type, Air Temperature, Rotational Speed, Torque, and Tool Wear
 
 ### Preprocessing Techniques
+
 - Label Encoding: Applied to the categorical 'Type' feature (L/M/H -> 0/1/2)
 - MinMaxScaler: Used for numerical features to scale them to a [0, 1] range
 - Data Splitting: 80% for training and 20% for testing
 - Handling Imbalance: Oversampling applied only to training data
 
 ### Model Selection & Training
+
 - Evaluated 9 baseline models including Ensemble Models, Linear Models, Instance-Based, and others
 - Top 3 models (CatBoost, GradientBoosting, SVC) selected for intensive hyperparameter tuning
 - GridSearchCV with 3-fold cross-validation used for hyperparameter optimization
@@ -99,18 +99,21 @@ predictive-maintenance-ai/
 ## 🚀 Installation
 
 1. Clone the repository:
+
 ```bash
 git clone https://github.com/yourusername/predictive-maintenance-ai.git
 cd predictive-maintenance-ai
 ```
 
 2. Create a virtual environment:
+
 ```bash
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 ```
 
 3. Install the required dependencies:
+
 ```bash
 pip install -r requirements.txt
 ```
@@ -118,6 +121,7 @@ pip install -r requirements.txt
 ## 💻 Usage
 
 ### Running the Complete Pipeline
+
 ```bash
 python main.py
 ```
@@ -125,6 +129,7 @@ python main.py
 ### Using Individual Components
 
 #### Data Preprocessing
+
 ```python
 from src.data_processing import preprocess_data
 from src.feature_engineering import engineer_features
@@ -138,6 +143,7 @@ X_test_processed = engineer_features(X_test)
 ```
 
 #### Model Training
+
 ```python
 from src.model_training import train_catboost_model
 
@@ -146,6 +152,7 @@ model = train_catboost_model(X_train_processed, y_train)
 ```
 
 #### Making Predictions
+
 ```python
 from src.prediction import predict_failure
 
@@ -156,11 +163,13 @@ predictions = predict_failure(model, new_data)
 ## 📈 Results
 
 The CatBoost model with the following hyperparameters achieved the best performance:
+
 - depth: 4
 - iterations: 200
 - learning_rate: 0.1
 
 Performance Metrics:
+
 - Overall Accuracy: 80.88%
 - Heat Dissipation Failure Recall: 100%
 - Power Failure Recall: 100%
@@ -184,6 +193,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 👤 Author
 
 **J Anand**
+
 - Mtech AI
 - SRM Institute of Science and Technology
 
