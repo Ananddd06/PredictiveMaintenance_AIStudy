@@ -123,6 +123,8 @@ graph TB
 
 ## 📊 Model Performance
 
+> 📋 **For detailed model training results and complete pipeline analysis, see [result.md](result.md)**
+
 ### 🏆 Best Model: XGBoost Classifier
 
 | Metric                | Score        |
