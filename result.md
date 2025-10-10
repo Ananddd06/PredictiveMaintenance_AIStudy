@@ -303,7 +303,7 @@ Class 4: 2500
 
 ## 📊 ADVANCED RESULTS SUMMARY:
 
-================================================================================
+```bash
 Model Optimizer Accuracy F1_Score Best_Val_F1
 AdvancedDNN adam 0.9495 0.961024 0.990108
 AdvancedDNN rmsprop 0.6880 0.793293 0.894393
@@ -314,7 +314,7 @@ TabularLSTM sgd_momentum 0.0130 0.000334 0.266747
 TabularTransformer adam 0.9645 0.947071 0.814562
 TabularTransformer rmsprop 0.0090 0.000161 0.219527
 TabularTransformer sgd_momentum 0.8510 0.902812 0.941084
-================================================================================
+```
 
 ## 🏆 BEST MODEL: AdvancedDNN with adam
 
