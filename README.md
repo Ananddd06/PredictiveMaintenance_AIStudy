@@ -43,10 +43,10 @@ This project implements a **cutting-edge predictive maintenance system** for man
 
 ### 🌟 Key Highlights
 
-- **97.15% Overall Accuracy** with XGBoost model
+- **99.01% Best Validation F1-Score** with Advanced DNN model
 - **Real-time Industrial Dashboard** with modern UI/UX
 - **6 Failure Types Detection** including Tool Wear, Power Failure, Heat Dissipation
-- **SMOTE-based Data Balancing** for handling imbalanced datasets
+- **Deep Learning Architecture** with Adam optimizer
 - **Interactive Web Application** built with Streamlit
 - **Comprehensive Model Analysis** with confusion matrices and performance metrics
 
@@ -110,7 +110,7 @@ graph TB
     B --> C[Feature Engineering]
     C --> D[SMOTE Balancing]
     D --> E[Model Training Pipeline]
-    E --> F[XGBoost Classifier]
+    E --> F[Advanced DNN Model]
     F --> G[Model Evaluation]
     G --> H[Hyperparameter Tuning]
     H --> I[Best Model Selection]
@@ -125,14 +125,14 @@ graph TB
 
 > 📋 **For detailed model training results and complete pipeline analysis, see [result.md](result.md)**
 
-### 🏆 Best Model: XGBoost Classifier
+### 🏆 Best Model: Advanced DNN with Adam Optimizer
 
-| Metric                | Score        |
-| --------------------- | ------------ |
-| **Overall Accuracy**  | 97.15%       |
-| **Weighted F1-Score** | 97.61%       |
-| **Macro F1-Score**    | 59.46%       |
-| **Training Time**     | ~2.3 seconds |
+| Metric                | Score  |
+| --------------------- | ------ |
+| **Test Accuracy**     | 94.95% |
+| **Test F1-Score**     | 96.10% |
+| **Best Val F1-Score** | 99.01% |
+| **Optimizer**         | Adam   |
 
 ### 📈 Class-wise Performance
 
@@ -247,7 +247,7 @@ industrial-ai-predictive-maintenance/
 ├── 📊 Data file/
 │   └── final_preprocessed_df_cleaned.csv    # Cleaned dataset
 ├── 🤖 Model_file/
-│   ├── best_model_final.pkl                 # Trained XGBoost model
+│   ├── best_model_final.pkl                 # Trained DNN model
 │   └── scaler_final.pkl                     # Feature scaler
 ├── 📓 Notebooks/
 │   ├── 01_exploratory_data_analysis.ipynb  # EDA and insights
@@ -303,13 +303,13 @@ X_balanced, y_balanced = smote.fit_resample(X_train, y_train)
 #### 3. **Model Training & Optimization**
 
 ```python
-# XGBoost with optimized hyperparameters
-model = XGBClassifier(
-    learning_rate=0.2,
-    max_depth=6,
-    n_estimators=300,
-    subsample=0.8,
-    random_state=42
+# Advanced DNN with Adam optimizer
+model = AdvancedDNN(
+    input_dim=feature_count,
+    hidden_layers=[256, 128, 64],
+    dropout_rate=0.3,
+    optimizer='adam',
+    learning_rate=0.001
 )
 ```
 
@@ -333,15 +333,17 @@ model = XGBClassifier(
 
 ## 📈 Results & Analysis
 
-### 🎯 Model Comparison Results
+### 🎯 Deep Learning Model Comparison Results
 
-| Algorithm    | CV F1-Score | Test F1-Score | Training Time |
-| ------------ | ----------- | ------------- | ------------- |
-| **XGBoost**  | **0.9918**  | **0.9729**    | 2.3s          |
-| ExtraTrees   | 0.9804      | 0.9571        | 1.8s          |
-| RandomForest | 0.9779      | 0.9590        | 2.1s          |
-| CatBoost     | 0.9776      | 0.9627        | 3.2s          |
-| DecisionTree | 0.9629      | 0.9487        | 0.5s          |
+| Model              | Optimizer    | Test Accuracy | Test F1-Score | Best Val F1 |
+| ------------------ | ------------ | ------------- | ------------- | ----------- |
+| **AdvancedDNN**    | **adam**     | **94.95%**    | **96.10%**    | **99.01%**  |
+| AdvancedDNN        | sgd_momentum | 89.10%        | 92.63%        | 96.85%      |
+| AdvancedDNN        | rmsprop      | 68.80%        | 79.33%        | 89.44%      |
+| TabularLSTM        | rmsprop      | 96.45%        | 94.71%        | 21.95%      |
+| TabularTransformer | adam         | 96.45%        | 94.71%        | 81.46%      |
+| TabularTransformer | sgd_momentum | 85.10%        | 90.28%        | 94.11%      |
+| TabularLSTM        | adam         | 72.55%        | 82.10%        | 93.11%      |
 
 ### 📊 Feature Importance Analysis
 
@@ -486,8 +488,8 @@ _M.Tech Artificial Intelligence_
 
 ### 🏆 Achievements
 
-- **97.15% Model Accuracy** in predictive maintenance
-- **Advanced ML Pipeline** with automated optimization
+- **99.01% Best Validation F1-Score** in predictive maintenance
+- **Advanced DNN Pipeline** with automated optimization
 - **Modern Industrial UI** with real-time capabilities
 - **Comprehensive Analysis** with detailed performance metrics
 
