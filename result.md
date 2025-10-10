@@ -378,17 +378,10 @@ Best Val F1: 0.9901
 
 ## 3️⃣ Practical Recommendation 📌
 
-```mermaid
-flowchart TD
-    A[Dataset: 13k rows, tabular] --> B[AdvancedDNN 🤖]
-    A --> C[XGBoost 🌲]
-    B --> D[Test F1: 0.9610 🎯]
-    C --> E[Test F1: 0.9729 🏆]
-    D --> F[Pros: High Capacity, Flexible, Potential for large data 🌟]
-    D --> G[Cons: Overfitting, Training Complexity, Hard to Interpret ⚠️]
-    E --> H[Pros: High Generalization, Handles Imbalance, Fast, Interpretable 🌟]
-    E --> I[Cons: Limited Nonlinear Interaction, Slight Scalability Issues ⚠️]
-```
+| Model          | Test F1-Score | Pros 🌟                                                        | Cons ⚠️                                                     | Recommendation                                        |
+| -------------- | ------------- | -------------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------- |
+| AdvancedDNN 🤖 | 0.9610 🎯     | High Capacity, Flexible, Potential for large data 🌟           | Overfitting, Training Complexity, Hard to Interpret ⚠️      | Explore if dataset grows or multimodal features added |
+| XGBoost 🌲     | 0.9729 🏆     | High Generalization, Handles Imbalance, Fast, Interpretable 🌟 | Limited Nonlinear Interaction, Slight Scalability Issues ⚠️ | Recommended choice ✅                                 |
 
 **Conclusion ✅:**
 For current dataset: **XGBoost 🌲** is the recommended choice. AdvancedDNN 🤖 can be explored if dataset grows or multimodal features are added.
