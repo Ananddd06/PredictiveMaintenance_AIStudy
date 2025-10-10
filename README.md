@@ -476,9 +476,9 @@ copies or substantial portions of the Software.
 _M.Tech Artificial Intelligence_  
 **SRM Institute of Science and Technology**
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue.svg)](https://linkedin.com/in/yourprofile)
-[![GitHub](https://img.shields.io/badge/GitHub-Follow-black.svg)](https://github.com/yourusername)
-[![Email](https://img.shields.io/badge/Email-Contact-red.svg)](mailto:your.email@example.com)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue.svg)](https://www.linkedin.com/in/anandj06/)
+[![GitHub](https://img.shields.io/badge/GitHub-Follow-black.svg)](https://github.com/Ananddd06)
+[![Email](https://img.shields.io/badge/Email-Contact-red.svg)](mailto:anand06.jeyakumar@gmail.com)
 
 </div>
 
