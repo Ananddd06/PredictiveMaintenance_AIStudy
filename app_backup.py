@@ -14,36 +14,36 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Modern Dark CSS
+# Modern Minimalist CSS
 st.markdown("""
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Source+Code+Pro:wght@400;500&display=swap');
     
     :root {
-        --bg-primary: #0a0a0a;
-        --bg-secondary: #0f0f0f;
-        --bg-tertiary: #1a1a1a;
-        --bg-card: #141414;
-        --bg-elevated: #1f1f1f;
-        --border-color: #2a2a2a;
-        --border-subtle: #1f1f1f;
-        --text-primary: #ffffff;
-        --text-secondary: #a0a0a0;
-        --text-muted: #666666;
-        --accent-cyan: #00d4ff;
-        --accent-blue: #0099ff;
-        --accent-green: #00ff88;
-        --accent-orange: #ff9500;
-        --accent-red: #ff3b30;
-        --gradient-cyan: linear-gradient(135deg, #00d4ff 0%, #0099ff 100%);
-        --gradient-success: linear-gradient(135deg, #00ff88 0%, #00cc6a 100%);
-        --gradient-warning: linear-gradient(135deg, #ff9500 0%, #ff6200 100%);
-        --gradient-danger: linear-gradient(135deg, #ff3b30 0%, #d70015 100%);
-        --gradient-card: linear-gradient(145deg, #141414 0%, #1a1a1a 100%);
-        --shadow-sm: 0 2px 8px rgba(0,0,0,0.3);
-        --shadow-md: 0 4px 16px rgba(0,0,0,0.4);
-        --shadow-lg: 0 8px 32px rgba(0,0,0,0.5);
-        --shadow-xl: 0 16px 48px rgba(0,0,0,0.6);
+        --bg-primary: #0d1117;
+        --bg-secondary: #161b22;
+        --bg-tertiary: #21262d;
+        --bg-card: #0d1117;
+        --bg-elevated: #21262d;
+        --border-color: #30363d;
+        --border-subtle: #21262d;
+        --text-primary: #f0f6fc;
+        --text-secondary: #8b949e;
+        --text-muted: #484f58;
+        --accent-teal: #14b8a6;
+        --accent-orange: #fb923c;
+        --accent-green: #22c55e;
+        --accent-red: #ef4444;
+        --accent-blue: #3b82f6;
+        --gradient-teal: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);
+        --gradient-orange: linear-gradient(135deg, #fb923c 0%, #f97316 100%);
+        --gradient-success: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+        --gradient-danger: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+        --gradient-card: linear-gradient(145deg, #0d1117 0%, #161b22 100%);
+        --shadow-sm: 0 1px 3px rgba(0,0,0,0.2);
+        --shadow-md: 0 4px 6px rgba(0,0,0,0.3);
+        --shadow-lg: 0 10px 15px rgba(0,0,0,0.4);
+        --shadow-xl: 0 20px 25px rgba(0,0,0,0.5);
     }
     
     /* Global Styles */
@@ -60,21 +60,21 @@ st.markdown("""
     
     /* Typography */
     h1, h2, h3, h4, h5, h6 {
-        font-family: 'Inter', sans-serif;
+        font-family: 'Poppins', sans-serif;
         font-weight: 600;
         color: var(--text-primary);
     }
     
     /* Header */
     .main-header {
-        background: var(--gradient-card);
+        background: var(--bg-secondary);
         border: 1px solid var(--border-color);
-        border-radius: 24px;
-        padding: 3rem;
+        border-radius: 12px;
+        padding: 2.5rem;
         margin-bottom: 2rem;
         position: relative;
         overflow: hidden;
-        box-shadow: var(--shadow-lg);
+        box-shadow: var(--shadow-md);
     }
     
     .main-header::before {
@@ -82,33 +82,23 @@ st.markdown("""
         position: absolute;
         top: 0;
         left: 0;
-        right: 0;
-        height: 2px;
-        background: var(--gradient-cyan);
-        animation: glow 3s ease-in-out infinite;
-    }
-    
-    @keyframes glow {
-        0%, 100% { opacity: 0.5; }
-        50% { opacity: 1; }
+        width: 100%;
+        height: 4px;
+        background: var(--gradient-teal);
     }
     
     .main-header h1 {
-        font-size: 3.5rem;
-        font-weight: 800;
+        font-size: 2.5rem;
+        font-weight: 700;
         margin: 0;
-        background: var(--gradient-cyan);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
+        color: var(--text-primary);
         text-align: center;
-        letter-spacing: -0.02em;
     }
     
     .main-header p {
         color: var(--text-secondary);
-        font-size: 1.2rem;
-        margin: 1rem 0 0 0;
+        font-size: 1.1rem;
+        margin: 0.5rem 0 0 0;
         text-align: center;
         font-weight: 400;
     }
@@ -125,171 +115,108 @@ st.markdown("""
     
     /* Cards */
     .card {
-        background: var(--gradient-card);
+        background: var(--bg-secondary);
         border: 1px solid var(--border-color);
-        border-radius: 16px;
+        border-radius: 8px;
         padding: 1.5rem;
-        box-shadow: var(--shadow-md);
-        transition: all 0.3s ease;
+        box-shadow: var(--shadow-sm);
+        transition: all 0.2s ease;
     }
     
     .card:hover {
-        transform: translateY(-2px);
-        box-shadow: var(--shadow-lg);
-        border-color: var(--accent-cyan);
+        box-shadow: var(--shadow-md);
+        border-color: var(--accent-teal);
     }
     
     /* Status Indicators */
     .status-normal {
         background: var(--gradient-success);
-        color: var(--bg-primary);
-        padding: 1rem 2rem;
-        border-radius: 50px;
+        color: white;
+        padding: 0.8rem 1.5rem;
+        border-radius: 8px;
         font-weight: 600;
         text-align: center;
-        font-size: 1.1rem;
-        position: relative;
-        overflow: hidden;
-        box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
+        font-size: 1rem;
+        box-shadow: var(--shadow-md);
     }
     
     .status-warning {
-        background: var(--gradient-warning);
-        color: var(--bg-primary);
-        padding: 1rem 2rem;
-        border-radius: 50px;
+        background: var(--gradient-orange);
+        color: white;
+        padding: 0.8rem 1.5rem;
+        border-radius: 8px;
         font-weight: 600;
         text-align: center;
-        font-size: 1.1rem;
-        position: relative;
-        overflow: hidden;
-        box-shadow: 0 0 20px rgba(255, 149, 0, 0.3);
+        font-size: 1rem;
+        box-shadow: var(--shadow-md);
     }
     
     .status-critical {
         background: var(--gradient-danger);
         color: white;
-        padding: 1rem 2rem;
-        border-radius: 50px;
+        padding: 0.8rem 1.5rem;
+        border-radius: 8px;
         font-weight: 600;
         text-align: center;
-        font-size: 1.1rem;
-        position: relative;
-        overflow: hidden;
-        animation: critical-pulse 2s infinite;
-        box-shadow: 0 0 30px rgba(255, 59, 48, 0.4);
+        font-size: 1rem;
+        box-shadow: var(--shadow-lg);
+        animation: blink 2s infinite;
     }
     
-    @keyframes critical-pulse {
-        0%, 100% { 
-            box-shadow: 0 0 30px rgba(255, 59, 48, 0.4);
-            transform: scale(1);
-        }
-        50% { 
-            box-shadow: 0 0 50px rgba(255, 59, 48, 0.6);
-            transform: scale(1.02);
-        }
+    @keyframes blink {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.8; }
     }
     
     /* Buttons */
     .stButton > button {
-        background: var(--gradient-cyan);
-        color: var(--bg-primary);
+        background: var(--gradient-teal);
+        color: white;
         border: none;
-        border-radius: 12px;
-        padding: 0.8rem 2rem;
-        font-weight: 600;
-        font-size: 1rem;
-        transition: all 0.3s ease;
-        box-shadow: var(--shadow-md);
-        position: relative;
-        overflow: hidden;
-    }
-    
-    .stButton > button::before {
-        content: "";
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 0;
-        height: 0;
-        background: rgba(255, 255, 255, 0.2);
-        border-radius: 50%;
-        transform: translate(-50%, -50%);
-        transition: width 0.6s, height 0.6s;
-    }
-    
-    .stButton > button:hover::before {
-        width: 300px;
-        height: 300px;
+        border-radius: 6px;
+        padding: 0.6rem 1.2rem;
+        font-weight: 500;
+        font-size: 0.95rem;
+        transition: all 0.2s ease;
+        box-shadow: var(--shadow-sm);
     }
     
     .stButton > button:hover {
-        transform: translateY(-2px);
-        box-shadow: var(--shadow-lg);
+        transform: translateY(-1px);
+        box-shadow: var(--shadow-md);
     }
     
     /* Metrics */
     [data-testid="metric-container"] {
-        background: var(--gradient-card);
+        background: var(--bg-secondary);
         border: 1px solid var(--border-color);
-        border-radius: 16px;
-        padding: 1.5rem;
+        border-radius: 8px;
+        padding: 1rem;
         box-shadow: var(--shadow-sm);
-        position: relative;
-        overflow: hidden;
-    }
-    
-    [data-testid="metric-container"]::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 2px;
-        background: var(--gradient-cyan);
-        transform: scaleX(0);
-        transition: transform 0.3s ease;
-    }
-    
-    [data-testid="metric-container"]:hover::after {
-        transform: scaleX(1);
     }
     
     /* Input Elements */
     .stSelectbox > div > div {
-        background: var(--bg-card);
+        background: var(--bg-tertiary);
         border: 1px solid var(--border-color);
-        border-radius: 12px;
+        border-radius: 6px;
         color: var(--text-primary);
     }
     
     .stSlider > div > div > div {
-        background: var(--accent-cyan);
+        background: var(--accent-teal);
     }
     
     /* Prediction Card */
     .prediction-card {
-        background: var(--gradient-card);
+        background: var(--bg-secondary);
         border: 1px solid var(--border-color);
-        border-radius: 20px;
-        padding: 2rem;
-        box-shadow: var(--shadow-lg);
+        border-radius: 8px;
+        padding: 1.5rem;
+        box-shadow: var(--shadow-md);
         margin: 1rem 0;
         position: relative;
         overflow: hidden;
-        animation: slideIn 0.5s ease-out;
-    }
-    
-    @keyframes slideIn {
-        from {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
     }
     
     .prediction-card::before {
@@ -297,21 +224,21 @@ st.markdown("""
         position: absolute;
         top: 0;
         left: 0;
-        right: 0;
-        height: 3px;
-        background: var(--gradient-cyan);
+        width: 4px;
+        height: 100%;
+        background: var(--gradient-teal);
     }
     
     /* DataFrames */
     .dataframe {
-        background: var(--bg-card);
-        border-radius: 12px;
+        background: var(--bg-secondary);
+        border-radius: 6px;
         overflow: hidden;
         border: 1px solid var(--border-color);
     }
     
     .dataframe th {
-        background: var(--bg-elevated);
+        background: var(--bg-tertiary);
         color: var(--text-primary);
         font-weight: 600;
     }
@@ -323,8 +250,8 @@ st.markdown("""
     
     /* Expander */
     .streamlit-expanderHeader {
-        background: var(--bg-card);
-        border-radius: 12px;
+        background: var(--bg-secondary);
+        border-radius: 6px;
         border: 1px solid var(--border-color);
         color: var(--text-primary);
         font-weight: 500;
@@ -332,7 +259,7 @@ st.markdown("""
     
     /* Scrollbar */
     ::-webkit-scrollbar {
-        width: 10px;
+        width: 8px;
     }
     
     ::-webkit-scrollbar-track {
@@ -341,24 +268,11 @@ st.markdown("""
     
     ::-webkit-scrollbar-thumb {
         background: var(--border-color);
-        border-radius: 5px;
+        border-radius: 4px;
     }
     
     ::-webkit-scrollbar-thumb:hover {
-        background: var(--accent-cyan);
-    }
-    
-    /* Glow Effects */
-    .glow-cyan {
-        box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
-    }
-    
-    .glow-green {
-        box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
-    }
-    
-    .glow-orange {
-        box-shadow: 0 0 20px rgba(255, 149, 0, 0.3);
+        background: var(--accent-teal);
     }
     
     /* Text Colors */
@@ -373,26 +287,79 @@ st.markdown("""
     
     /* Footer */
     .footer {
-        background: var(--gradient-card);
+        background: var(--bg-secondary);
         border: 1px solid var(--border-color);
-        border-radius: 20px;
-        padding: 2rem;
-        margin-top: 3rem;
+        border-radius: 8px;
+        padding: 1.5rem;
+        margin-top: 2rem;
         text-align: center;
-        box-shadow: var(--shadow-lg);
+        box-shadow: var(--shadow-md);
     }
     
     .footer h3 {
-        background: var(--gradient-cyan);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        margin: 0 0 1rem 0;
+        color: var(--text-primary);
+        margin: 0 0 0.5rem 0;
     }
     
     .footer p {
         color: var(--text-secondary);
-        margin: 0.5rem 0;
+        margin: 0.3rem 0;
+    }
+    
+    /* Custom Components */
+    .metric-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .metric-item {
+        background: var(--bg-secondary);
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        padding: 1rem;
+        text-align: center;
+        box-shadow: var(--shadow-sm);
+    }
+    
+    .metric-value {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: var(--accent-teal);
+        margin-bottom: 0.3rem;
+    }
+    
+    .metric-label {
+        font-size: 0.9rem;
+        color: var(--text-secondary);
+    }
+    
+    .status-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .status-item {
+        background: var(--bg-secondary);
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        padding: 0.8rem;
+        display: flex;
+        align-items: center;
+        box-shadow: var(--shadow-sm);
+    }
+    
+    .status-icon {
+        font-size: 1.2rem;
+        margin-right: 0.8rem;
+    }
+    
+    .status-text {
+        font-size: 0.9rem;
+        color: var(--text-secondary);
     }
     
     /* Animations */
@@ -503,16 +470,16 @@ def main():
     
     # Modern Sidebar
     st.sidebar.markdown("""
-    <div style="text-align: center; padding: 1.5rem; background: var(--gradient-card); border-radius: 16px; margin-bottom: 1.5rem; border: 1px solid var(--border-color);">
-        <h2 style="color: var(--text-primary); margin: 0; font-size: 1.3rem;">⚙️ Control Panel</h2>
+    <div style="text-align: center; padding: 1.5rem; background: var(--bg-tertiary); border-radius: 8px; margin-bottom: 1.5rem; border: 1px solid var(--border-color);">
+        <h2 style="color: var(--text-primary); margin: 0; font-size: 1.2rem;">⚙️ Control Panel</h2>
         <p style="color: var(--text-secondary); margin: 0.5rem 0 0 0; font-size: 0.9rem;">System Parameters</p>
     </div>
     """, unsafe_allow_html=True)
     
     # Quick Scenarios
     st.sidebar.markdown("""
-    <div style="background: var(--bg-card); border-left: 3px solid var(--accent-cyan); padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
-        <h3 style="color: var(--accent-cyan); margin: 0 0 0.5rem 0; font-size: 1rem;">🎯 Quick Scenarios</h3>
+    <div style="background: var(--bg-tertiary); border-left: 3px solid var(--accent-teal); padding: 1rem; border-radius: 6px; margin-bottom: 1rem;">
+        <h3 style="color: var(--accent-teal); margin: 0 0 0.5rem 0; font-size: 1rem;">🎯 Quick Scenarios</h3>
         <p style="color: var(--text-secondary); font-size: 0.85rem; margin: 0;">Test configurations</p>
     </div>
     """, unsafe_allow_html=True)
@@ -587,12 +554,12 @@ def main():
         
         # Gauge colors
         gauge_colors = {
-            'air_temp': '#00d4ff',
-            'process_temp': '#0099ff', 
-            'rpm': '#00ff88',
-            'torque': '#ff9500',
-            'tool_wear': '#00d4ff',
-            'status': '#00ff88'
+            'air_temp': '#14b8a6',
+            'process_temp': '#3b82f6', 
+            'rpm': '#22c55e',
+            'torque': '#fb923c',
+            'tool_wear': '#14b8a6',
+            'status': '#22c55e'
         }
         
         # Add gauges
@@ -601,17 +568,17 @@ def main():
             value=air_temp,
             domain={'x': [0, 1], 'y': [0, 1]},
             gauge={
-                'axis': {'range': [295, 305], 'tickcolor': '#666666'},
+                'axis': {'range': [295, 305], 'tickcolor': '#8b949e'},
                 'bar': {'color': gauge_colors['air_temp']},
-                'bgcolor': '#141414',
+                'bgcolor': '#161b22',
                 'borderwidth': 1,
-                'bordercolor': '#2a2a2a',
+                'bordercolor': '#30363d',
                 'steps': [
-                    {'range': [295, 300], 'color': 'rgba(0, 212, 255, 0.1)'},
-                    {'range': [300, 305], 'color': 'rgba(255, 149, 0, 0.1)'}
+                    {'range': [295, 300], 'color': 'rgba(20, 184, 166, 0.1)'},
+                    {'range': [300, 305], 'color': 'rgba(251, 146, 60, 0.1)'}
                 ],
                 'threshold': {
-                    'line': {'color': "#00d4ff", 'width': 2},
+                    'line': {'color': "#14b8a6", 'width': 2},
                     'thickness': 0.5,
                     'value': 302
                 }
@@ -621,17 +588,17 @@ def main():
             mode="gauge+number", 
             value=process_temp,
             gauge={
-                'axis': {'range': [305, 315], 'tickcolor': '#666666'},
+                'axis': {'range': [305, 315], 'tickcolor': '#8b949e'},
                 'bar': {'color': gauge_colors['process_temp']},
-                'bgcolor': '#141414',
+                'bgcolor': '#161b22',
                 'borderwidth': 1,
-                'bordercolor': '#2a2a2a',
+                'bordercolor': '#30363d',
                 'steps': [
-                    {'range': [305, 310], 'color': 'rgba(0, 255, 136, 0.1)'},
-                    {'range': [310, 315], 'color': 'rgba(255, 59, 48, 0.1)'}
+                    {'range': [305, 310], 'color': 'rgba(34, 197, 94, 0.1)'},
+                    {'range': [310, 315], 'color': 'rgba(239, 68, 68, 0.1)'}
                 ],
                 'threshold': {
-                    'line': {'color': "#0099ff", 'width': 2},
+                    'line': {'color': "#3b82f6", 'width': 2},
                     'thickness': 0.5,
                     'value': 312
                 }
@@ -641,17 +608,17 @@ def main():
             mode="gauge+number", 
             value=rotational_speed,
             gauge={
-                'axis': {'range': [1000, 3000], 'tickcolor': '#666666'},
+                'axis': {'range': [1000, 3000], 'tickcolor': '#8b949e'},
                 'bar': {'color': gauge_colors['rpm']},
-                'bgcolor': '#141414',
+                'bgcolor': '#161b22',
                 'borderwidth': 1,
-                'bordercolor': '#2a2a2a',
+                'bordercolor': '#30363d',
                 'steps': [
-                    {'range': [1000, 2000], 'color': 'rgba(0, 255, 136, 0.1)'},
-                    {'range': [2000, 3000], 'color': 'rgba(255, 149, 0, 0.1)'}
+                    {'range': [1000, 2000], 'color': 'rgba(34, 197, 94, 0.1)'},
+                    {'range': [2000, 3000], 'color': 'rgba(251, 146, 60, 0.1)'}
                 ],
                 'threshold': {
-                    'line': {'color': "#00ff88", 'width': 2},
+                    'line': {'color': "#22c55e", 'width': 2},
                     'thickness': 0.5,
                     'value': 2500
                 }
@@ -661,17 +628,17 @@ def main():
             mode="gauge+number", 
             value=torque,
             gauge={
-                'axis': {'range': [10, 80], 'tickcolor': '#666666'},
+                'axis': {'range': [10, 80], 'tickcolor': '#8b949e'},
                 'bar': {'color': gauge_colors['torque']},
-                'bgcolor': '#141414',
+                'bgcolor': '#161b22',
                 'borderwidth': 1,
-                'bordercolor': '#2a2a2a',
+                'bordercolor': '#30363d',
                 'steps': [
-                    {'range': [10, 50], 'color': 'rgba(0, 255, 136, 0.1)'},
-                    {'range': [50, 80], 'color': 'rgba(255, 59, 48, 0.1)'}
+                    {'range': [10, 50], 'color': 'rgba(34, 197, 94, 0.1)'},
+                    {'range': [50, 80], 'color': 'rgba(239, 68, 68, 0.1)'}
                 ],
                 'threshold': {
-                    'line': {'color': "#ff9500", 'width': 2},
+                    'line': {'color': "#fb923c", 'width': 2},
                     'thickness': 0.5,
                     'value': 60
                 }
@@ -681,18 +648,18 @@ def main():
             mode="gauge+number", 
             value=tool_wear,
             gauge={
-                'axis': {'range': [0, 300], 'tickcolor': '#666666'},
+                'axis': {'range': [0, 300], 'tickcolor': '#8b949e'},
                 'bar': {'color': gauge_colors['tool_wear']},
-                'bgcolor': '#141414',
+                'bgcolor': '#161b22',
                 'borderwidth': 1,
-                'bordercolor': '#2a2a2a',
+                'bordercolor': '#30363d',
                 'steps': [
-                    {'range': [0, 150], 'color': 'rgba(0, 255, 136, 0.1)'},
-                    {'range': [150, 250], 'color': 'rgba(255, 149, 0, 0.1)'},
-                    {'range': [250, 300], 'color': 'rgba(255, 59, 48, 0.1)'}
+                    {'range': [0, 150], 'color': 'rgba(34, 197, 94, 0.1)'},
+                    {'range': [150, 250], 'color': 'rgba(251, 146, 60, 0.1)'},
+                    {'range': [250, 300], 'color': 'rgba(239, 68, 68, 0.1)'}
                 ],
                 'threshold': {
-                    'line': {'color': "#00d4ff", 'width': 2},
+                    'line': {'color': "#14b8a6", 'width': 2},
                     'thickness': 0.5,
                     'value': 250
                 }
@@ -703,14 +670,14 @@ def main():
             mode="gauge+number", 
             value=100,
             gauge={
-                'axis': {'range': [0, 100], 'tickcolor': '#666666'},
-                'bar': {'color': '#00ff88'},
-                'bgcolor': '#141414',
+                'axis': {'range': [0, 100], 'tickcolor': '#8b949e'},
+                'bar': {'color': '#22c55e'},
+                'bgcolor': '#161b22',
                 'borderwidth': 1,
-                'bordercolor': '#2a2a2a',
+                'bordercolor': '#30363d',
                 'steps': [
-                    {'range': [0, 50], 'color': 'rgba(255, 59, 48, 0.1)'},
-                    {'range': [50, 100], 'color': 'rgba(0, 255, 136, 0.1)'}
+                    {'range': [0, 50], 'color': 'rgba(239, 68, 68, 0.1)'},
+                    {'range': [50, 100], 'color': 'rgba(34, 197, 94, 0.1)'}
                 ]
             }), row=2, col=3)
         
@@ -718,9 +685,9 @@ def main():
         fig.update_layout(
             height=400,
             showlegend=False,
-            paper_bgcolor='#0a0a0a',
-            plot_bgcolor='#0a0a0a',
-            font={'color': '#ffffff', 'family': 'Inter'},
+            paper_bgcolor='#0d1117',
+            plot_bgcolor='#0d1117',
+            font={'color': '#f0f6fc', 'family': 'Poppins'},
             margin=dict(l=10, r=10, t=40, b=10)
         )
         
@@ -729,36 +696,63 @@ def main():
         # Parameters summary
         st.markdown("### 📋 Current Parameters")
         
-        param_col1, param_col2 = st.columns(2)
-        
-        with param_col1:
-            st.metric("Machine Type", machine_type)
-            st.metric("Air Temperature", f"{air_temp} K")
-            st.metric("Process Temperature", f"{process_temp} K")
-        
-        with param_col2:
-            st.metric("Rotational Speed", f"{rotational_speed} rpm")
-            st.metric("Torque", f"{torque} Nm")
-            st.metric("Tool Wear", f"{tool_wear} min")
+        st.markdown("""
+        <div class="metric-grid">
+            <div class="metric-item">
+                <div class="metric-value">""" + machine_type + """</div>
+                <div class="metric-label">Machine Type</div>
+            </div>
+            <div class="metric-item">
+                <div class="metric-value">""" + str(air_temp) + """ K</div>
+                <div class="metric-label">Air Temperature</div>
+            </div>
+            <div class="metric-item">
+                <div class="metric-value">""" + str(process_temp) + """ K</div>
+                <div class="metric-label">Process Temperature</div>
+            </div>
+            <div class="metric-item">
+                <div class="metric-value">""" + str(rotational_speed) + """ rpm</div>
+                <div class="metric-label">Rotational Speed</div>
+            </div>
+            <div class="metric-item">
+                <div class="metric-value">""" + str(torque) + """ Nm</div>
+                <div class="metric-label">Torque</div>
+            </div>
+            <div class="metric-item">
+                <div class="metric-value">""" + str(tool_wear) + """ min</div>
+                <div class="metric-label">Tool Wear</div>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
         
         # System status
         st.markdown("### 🔍 System Status")
         
-        status_col1, status_col2 = st.columns(2)
+        temp_status = "🟢 Normal" if air_temp < 302 else "🟡 High" if air_temp < 304 else "🔴 Critical"
+        rpm_status = "🟢 Normal" if rotational_speed < 2500 else "🟡 High"
+        torque_status = "🟢 Normal" if torque < 60 else "🟡 High" if torque < 75 else "🔴 Critical"
+        wear_status = "🟢 Good" if tool_wear < 150 else "🟡 Monitor" if tool_wear < 250 else "🔴 Replace"
         
-        with status_col1:
-            temp_status = "🟢 Normal" if air_temp < 302 else "🟡 High" if air_temp < 304 else "🔴 Critical"
-            st.markdown(f"**Temperature:** {temp_status}")
-            
-            rpm_status = "🟢 Normal" if rotational_speed < 2500 else "🟡 High"
-            st.markdown(f"**RPM:** {rpm_status}")
-        
-        with status_col2:
-            torque_status = "🟢 Normal" if torque < 60 else "🟡 High" if torque < 75 else "🔴 Critical"
-            st.markdown(f"**Torque:** {torque_status}")
-            
-            wear_status = "🟢 Good" if tool_wear < 150 else "🟡 Monitor" if tool_wear < 250 else "🔴 Replace"
-            st.markdown(f"**Tool Wear:** {wear_status}")
+        st.markdown("""
+        <div class="status-grid">
+            <div class="status-item">
+                <div class="status-icon">🌡️</div>
+                <div class="status-text">Temperature: """ + temp_status + """</div>
+            </div>
+            <div class="status-item">
+                <div class="status-icon">⚙️</div>
+                <div class="status-text">RPM: """ + rpm_status + """</div>
+            </div>
+            <div class="status-item">
+                <div class="status-icon">💪</div>
+                <div class="status-text">Torque: """ + torque_status + """</div>
+            </div>
+            <div class="status-item">
+                <div class="status-icon">🔧</div>
+                <div class="status-text">Tool Wear: """ + wear_status + """</div>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
     
     with col2:
         st.markdown("""
@@ -867,15 +861,15 @@ def main():
             
             # Bar chart
             fig_prob = px.bar(prob_df, x='Failure Type', y='Probability', 
-                             color='Probability', color_continuous_scale='Blues',
+                             color='Probability', color_continuous_scale='teal',
                              title="Failure Probability Distribution")
             fig_prob.update_xaxes(tickangle=45)
             fig_prob.update_layout(
                 height=350, 
                 showlegend=False,
-                paper_bgcolor='#0a0a0a',
-                plot_bgcolor='#0a0a0a',
-                font={'color': '#ffffff'}
+                paper_bgcolor='#0d1117',
+                plot_bgcolor='#0d1117',
+                font={'color': '#f0f6fc'}
             )
             st.plotly_chart(fig_prob, use_container_width=True)
             
@@ -962,7 +956,7 @@ def main():
     <div class="footer">
         <h3>🏭 Industrial AI Solutions</h3>
         <p>Developed by J Anand | SRM Institute of Science and Technology</p>
-        <p style="font-size: 0.9rem; color: var(--text-muted);">Powered by XGBoost | Real-time Analytics</p>
+        <p style="font-size: 0.9rem; color: var(--text-muted);">Powered by XGBoost Model  | Real-time Analytics</p>
     </div>
     """, unsafe_allow_html=True)
 
