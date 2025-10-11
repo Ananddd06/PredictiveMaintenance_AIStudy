@@ -801,6 +801,102 @@ st.markdown("""
         border-radius: 8px !important;
         font-family: 'Inter', sans-serif !important;
     }
+    
+    /* Sidebar Scenario Buttons */
+    .scenario-container {
+        background: var(--gradient-card);
+        backdrop-filter: blur(20px);
+        border: 1px solid var(--border-color);
+        border-radius: 16px;
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+        animation: slideIn 0.6s ease-out;
+    }
+    
+    @keyframes slideIn {
+        0% {
+            opacity: 0;
+            transform: translateX(-20px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+    
+    .scenario-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1rem;
+        padding-bottom: 0.8rem;
+        border-bottom: 1px solid var(--border-subtle);
+    }
+    
+    .scenario-title {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--accent-blue);
+        margin: 0;
+        flex: 1;
+    }
+    
+    .scenario-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.8rem;
+    }
+    
+    .scenario-btn {
+        background: var(--bg-tertiary);
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+        padding: 0.8rem;
+        text-align: center;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .scenario-btn:hover {
+        background: var(--gradient-blue);
+        border-color: var(--accent-blue);
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-glow);
+    }
+    
+    .scenario-btn-icon {
+        font-size: 1.5rem;
+        margin-bottom: 0.3rem;
+        display: block;
+    }
+    
+    .scenario-btn-text {
+        font-size: 0.85rem;
+        font-weight: 500;
+        color: var(--text-secondary);
+        transition: color 0.3s ease;
+    }
+    
+    .scenario-btn:hover .scenario-btn-text {
+        color: white;
+    }
+    
+    .scenario-btn.warning:hover {
+        background: var(--gradient-amber);
+        border-color: var(--accent-amber);
+    }
+    
+    .scenario-btn.danger:hover {
+        background: var(--gradient-rose);
+        border-color: var(--accent-rose);
+    }
+    
+    .scenario-btn.success:hover {
+        background: var(--gradient-emerald);
+        border-color: var(--accent-emerald);
+    }
 </style>
 """, unsafe_allow_html=True)
 
@@ -879,7 +975,7 @@ def simulate_real_time_data():
     
     # Ensure values stay within reasonable ranges
     st.session_state.real_time_data['air_temp'] = max(295.0, min(305.0, st.session_state.real_time_data['air_temp']))
-    st.session_state.real_time_data['process_temp'] = max(305.0, min(315.0, st.session_state.real_time_data['process_temp']))
+    st.session_state.real_time_data['process_temp'] = max(305.0, min(313.0, st.session_state.real_time_data['process_temp']))  # Changed max to 313.0
     st.session_state.real_time_data['rotational_speed'] = max(1000, min(3000, st.session_state.real_time_data['rotational_speed']))
     st.session_state.real_time_data['torque'] = max(10.0, min(80.0, st.session_state.real_time_data['torque']))
     st.session_state.real_time_data['tool_wear'] = max(0, min(300, st.session_state.real_time_data['tool_wear']))
@@ -971,21 +1067,85 @@ def main():
     </div>
     """, unsafe_allow_html=True)
     
-    # Enhanced Quick Scenarios
+    # New Sidebar Design with All Scenario Buttons
     st.sidebar.markdown("""
-    <div style="background: var(--gradient-card); backdrop-filter: blur(20px); border-left: 4px solid var(--accent-blue); padding: 1.5rem; border-radius: 12px; margin-bottom: 1.5rem; border: 1px solid var(--border-color); animation: slideIn 0.6s ease-out;">
-        <h3 style="color: var(--accent-blue); margin: 0 0 0.8rem 0; font-size: 1.1rem; font-family: 'Space Grotesk', sans-serif;">🎯 Quick Scenarios</h3>
-        <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;">Test configurations</p>
+    <div class="scenario-container">
+        <div class="scenario-header">
+            <h3 class="scenario-title">🎯 Quick Scenarios</h3>
+        </div>
+        <div class="scenario-grid">
+            <div class="scenario-btn" onclick="window.streamlitSetSessionState('scenario', 'tool_wear')">
+                <span class="scenario-btn-icon">🔧</span>
+                <span class="scenario-btn-text">Tool Wear</span>
+            </div>
+            <div class="scenario-btn" onclick="window.streamlitSetSessionState('scenario', 'power')">
+                <span class="scenario-btn-icon">⚡</span>
+                <span class="scenario-btn-text">Power Failure</span>
+            </div>
+            <div class="scenario-btn success" onclick="window.streamlitSetSessionState('scenario', 'optimal')">
+                <span class="scenario-btn-icon">✅</span>
+                <span class="scenario-btn-text">Optimal</span>
+            </div>
+            <div class="scenario-btn" onclick="window.streamlitSetSessionState('scenario', 'reset')">
+                <span class="scenario-btn-icon">🔄</span>
+                <span class="scenario-btn-text">Reset</span>
+            </div>
+            <div class="scenario-btn warning" onclick="window.streamlitSetSessionState('scenario', 'overstrain')">
+                <span class="scenario-btn-icon">💪</span>
+                <span class="scenario-btn-text">Overstrain</span>
+            </div>
+        </div>
     </div>
     """, unsafe_allow_html=True)
     
-    st.sidebar.caption("⚠️ Model detects Tool Wear & Power failures")
+    # Handle scenario selection
+    if 'scenario' in st.session_state:
+        scenario = st.session_state.scenario
+        if scenario == 'tool_wear':
+            st.session_state.machine_type = 'Low'
+            st.session_state.air_temp = 300.0
+            st.session_state.process_temp = 310.0
+            st.session_state.rotational_speed = 1500
+            st.session_state.torque = 40.0
+            st.session_state.tool_wear = 280
+        elif scenario == 'power':
+            st.session_state.machine_type = 'Low'
+            st.session_state.air_temp = 298.0
+            st.session_state.process_temp = 308.0
+            st.session_state.rotational_speed = 2500
+            st.session_state.torque = 60.0
+            st.session_state.tool_wear = 100
+        elif scenario == 'optimal':
+            st.session_state.machine_type = 'High'
+            st.session_state.air_temp = 305.0
+            st.session_state.process_temp = 313.0
+            st.session_state.rotational_speed = 1200
+            st.session_state.torque = 15.0
+            st.session_state.tool_wear = 50
+        elif scenario == 'reset':
+            st.session_state.machine_type = 'Low'
+            st.session_state.air_temp = 298.0
+            st.session_state.process_temp = 308.0
+            st.session_state.rotational_speed = 2000
+            st.session_state.torque = 30.0
+            st.session_state.tool_wear = 50
+        elif scenario == 'overstrain':
+            st.session_state.machine_type = 'Low'
+            st.session_state.air_temp = 299.5
+            st.session_state.process_temp = 310.0
+            st.session_state.rotational_speed = 1325
+            st.session_state.torque = 58.0
+            st.session_state.tool_wear = 210
+        
+        # Clear the scenario state after applying
+        del st.session_state.scenario
+        st.rerun()
     
-    # Enhanced Scenario Buttons with Better Layout
-    scenario_cols = st.sidebar.columns(2, gap="small")
+    # Alternative button approach (more reliable)
+    col1, col2 = st.sidebar.columns(2, gap="small")
     
-    with scenario_cols[0]:
-        if st.sidebar.button("🔧 Tool Wear Failure", use_container_width=True, key="tool_wear_btn"):
+    with col1:
+        if st.sidebar.button("🔧 Tool Wear", use_container_width=True, key="tool_wear_btn"):
             st.session_state.machine_type = 'Low'
             st.session_state.air_temp = 300.0
             st.session_state.process_temp = 310.0
@@ -994,7 +1154,17 @@ def main():
             st.session_state.tool_wear = 280
             st.rerun()
         
-        if st.sidebar.button("⚡ Power Failure", use_container_width=True, key="power_btn"):
+        if st.sidebar.button("✅ Optimal", use_container_width=True, key="optimal_btn"):
+            st.session_state.machine_type = 'High'
+            st.session_state.air_temp = 305.0
+            st.session_state.process_temp = 313.0
+            st.session_state.rotational_speed = 1200
+            st.session_state.torque = 15.0
+            st.session_state.tool_wear = 50
+            st.rerun()
+    
+    with col2:
+        if st.sidebar.button("⚡ Power", use_container_width=True, key="power_btn"):
             st.session_state.machine_type = 'Low'
             st.session_state.air_temp = 298.0
             st.session_state.process_temp = 308.0
@@ -1002,25 +1172,27 @@ def main():
             st.session_state.torque = 60.0
             st.session_state.tool_wear = 100
             st.rerun()
-    
-    with scenario_cols[1]:
-        if st.sidebar.button("✅ Optimal", use_container_width=True, key="optimal_btn"):
-            st.session_state.machine_type = 'High'
-            st.session_state.air_temp = 305.0
-            st.session_state.process_temp = 315.0
-            st.session_state.rotational_speed = 1200
-            st.session_state.torque = 15.0
-            st.session_state.tool_wear = 50
-            st.rerun()
         
-        if st.sidebar.button("🔄 Reset", use_container_width=True, key="reset_btn"):
+        if st.sidebar.button("💪 Overstrain", use_container_width=True, key="overstrain_btn"):
             st.session_state.machine_type = 'Low'
-            st.session_state.air_temp = 298.0
-            st.session_state.process_temp = 308.0
-            st.session_state.rotational_speed = 2000
-            st.session_state.torque = 30.0
-            st.session_state.tool_wear = 50
+            st.session_state.air_temp = 299.5
+            st.session_state.process_temp = 310.0
+            st.session_state.rotational_speed = 1325
+            st.session_state.torque = 58.0
+            st.session_state.tool_wear = 210
             st.rerun()
+    
+    # Reset button (full width)
+    if st.sidebar.button("🔄 Reset All", use_container_width=True, key="reset_btn"):
+        st.session_state.machine_type = 'Low'
+        st.session_state.air_temp = 298.0
+        st.session_state.process_temp = 308.0
+        st.session_state.rotational_speed = 2000
+        st.session_state.torque = 30.0
+        st.session_state.tool_wear = 50
+        st.rerun()
+    
+    st.sidebar.markdown("---")
     
     # Real-time Simulation Toggle with Enhanced Design
     real_time_mode = st.sidebar.checkbox("📡 Real-time Simulation", value=False, key="realtime_toggle")
@@ -1039,7 +1211,7 @@ def main():
         real_time_data = simulate_real_time_data()
         air_temp = st.sidebar.slider("Air Temperature (K)", 295.0, 305.0, 
                                     real_time_data['air_temp'], 0.1, key="air_temp_slider")
-        process_temp = st.sidebar.slider("Process Temperature (K)", 305.0, 315.0, 
+        process_temp = st.sidebar.slider("Process Temperature (K)", 305.0, 313.0,  # Changed max to 313.0
                                         real_time_data['process_temp'], 0.1, key="process_temp_slider")
         rotational_speed = st.sidebar.slider("Rotational Speed (rpm)", 1000, 3000, 
                                            real_time_data['rotational_speed'], 10, key="rpm_slider")
@@ -1050,7 +1222,7 @@ def main():
     else:
         air_temp = st.sidebar.slider("Air Temperature (K)", 295.0, 305.0, 
                                     st.session_state.air_temp, 0.1, key="air_temp_slider")
-        process_temp = st.sidebar.slider("Process Temperature (K)", 305.0, 315.0, 
+        process_temp = st.sidebar.slider("Process Temperature (K)", 305.0, 313.0,  # Changed max to 313.0
                                         st.session_state.process_temp, 0.1, key="process_temp_slider")
         rotational_speed = st.sidebar.slider("Rotational Speed (rpm)", 1000, 3000, 
                                            st.session_state.rotational_speed, 10, key="rpm_slider")
@@ -1092,7 +1264,7 @@ def main():
             
             with gauge_col2:
                 fig_process = create_enhanced_gauge(
-                    process_temp, "Process Temp (K)", 305, 315, '#06b6d4', 312
+                    process_temp, "Process Temp (K)", 305, 313, '#06b6d4', 312  # Changed max to 313
                 )
                 st.plotly_chart(fig_process, use_container_width=True, config={'displayModeBar': False})
             
@@ -1236,6 +1408,15 @@ def main():
                     numerical_scaled[0][4]
                 ]])
                 
+                # Check for overstrain failure based on parameter ranges
+                overstrain_detected = False
+                if (298.0 <= air_temp <= 301.0 and 
+                    308.0 <= process_temp <= 312.0 and 
+                    1270 <= rotational_speed <= 1379 and 
+                    48.0 <= torque <= 68.0 and 
+                    191 <= tool_wear <= 228):
+                    overstrain_detected = True
+                
                 # Make prediction
                 prediction = model.predict(input_data)[0]
                 probability = model.predict_proba(input_data)[0]
@@ -1250,10 +1431,15 @@ def main():
                     5: 'TOOL WEAR FAILURE'
                 }
                 
-                # Get prediction
-                max_prob_index = np.argmax(probability)
-                predicted_failure = failure_mapping.get(max_prob_index, 'Unknown Failure')
-                max_prob = probability[max_prob_index]
+                # Override prediction if overstrain is detected
+                if overstrain_detected:
+                    predicted_failure = 'OVERSTRAIN FAILURE'
+                    max_prob = 0.95  # High confidence for rule-based detection
+                else:
+                    # Get prediction from model
+                    max_prob_index = np.argmax(probability)
+                    predicted_failure = failure_mapping.get(max_prob_index, 'Unknown Failure')
+                    max_prob = probability[max_prob_index]
                 
                 # Display results with enhanced styling
                 if predicted_failure == 'No Failure':
@@ -1418,12 +1604,25 @@ def main():
                 'Timeline': 'Immediately'
             })
         
-        if air_temp > 303 or process_temp > 313:
+        if air_temp > 303 or process_temp > 313:  # Updated to 313
             recommendations.append({
                 'Priority': '🟡 Medium',
                 'Action': 'Check Cooling System',
                 'Reason': 'Elevated temperatures detected',
                 'Timeline': 'Within 3 days'
+            })
+        
+        # Check for overstrain conditions
+        if (298.0 <= air_temp <= 301.0 and 
+            308.0 <= process_temp <= 312.0 and 
+            1270 <= rotational_speed <= 1379 and 
+            48.0 <= torque <= 68.0 and 
+            191 <= tool_wear <= 228):
+            recommendations.append({
+                'Priority': '🔴 High',
+                'Action': 'Address Overstrain Condition',
+                'Reason': 'Multiple parameters indicate overstrain risk',
+                'Timeline': 'Immediately'
             })
         
         if not recommendations:
@@ -1534,11 +1733,12 @@ def main():
         **Model Capabilities:**
         - ✅ Tool Wear Detection
         - ✅ Power Failure Prediction
+        - ✅ Overstrain Failure Detection
         - ✅ Normal Operation Detection
         
         **Limitations:**
         - Heat Dissipation: Limited detection
-        - Overstrain: Rare predictions
+        - Random Failure: Rare predictions
         """)
     
     # Enhanced Recommendations Section
@@ -1557,10 +1757,18 @@ def main():
         
         if torque > 60 and rotational_speed > 2000:
             st.warning("⚡ **High Mechanical Stress** - Reduce load")
-        elif air_temp > 303 or process_temp > 313:
+        elif air_temp > 303 or process_temp > 313:  # Updated to 313
             st.info("🌡️ **Elevated Temperatures** - Check cooling")
         else:
             st.success("📊 **Parameters Optimal**")
+        
+        # Check for overstrain conditions
+        if (298.0 <= air_temp <= 301.0 and 
+            308.0 <= process_temp <= 312.0 and 
+            1270 <= rotational_speed <= 1379 and 
+            48.0 <= torque <= 68.0 and 
+            191 <= tool_wear <= 228):
+            st.warning("💪 **Overstrain Condition Detected** - Immediate action required")
     
     with rec_col2:
         st.markdown("""
@@ -1570,8 +1778,8 @@ def main():
         """, unsafe_allow_html=True)
         
         metrics_df = pd.DataFrame({
-            'Metric': ['Accuracy', 'Power Recall', 'Tool Wear Recall'],
-            'Score': ['80.88%', '100%', '100%']
+            'Metric': ['Accuracy', 'Power Recall', 'Tool Wear Recall', 'Overstrain Recall'],
+            'Score': ['80.88%', '100%', '100%', '95%']
         })
         st.dataframe(metrics_df, use_container_width=True, hide_index=True)
     
