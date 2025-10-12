@@ -59,13 +59,13 @@ weighted avg         0.9703    0.9485    0.9592    2000.0
 #### Confusion Matrix (Test Set - Failures Only)
 
 ```markdown
-![Deep Learning Confusion Matrix](Results/cf_deep_learning.png)
+![Deep Learning Confusion Matrix](https://raw.githubusercontent.com/Ananddd06/Predictive_Maintenance_Approach_Manufacturing_Systems/main/Results/cf_deep_learning.png)
 ```
 
 #### Training & Validation Loss
 
 ```markdown
-![Training and Validation Loss](Results/training_validation_loss_curves.png)
+![Training and Validation Loss](https://raw.githubusercontent.com/Ananddd06/Predictive_Maintenance_Approach_Manufacturing_Systems/main/Results/training_validation_loss_curves.png)
 ```
 
 **Analysis:** The training graph shows the model was a diligent student. It learned smoothly, and the validation loss proves it wasn't just guessing. This confirms the problem wasn't a lack of effort, but a fundamental misunderstanding of the task.
@@ -95,13 +95,13 @@ weighted avg         0.9951    0.9943    0.9946   10000.0
 #### Confusion Matrix (Test Set - Failures Only)
 
 ```markdown
-![XGBoost Confusion Matrix](Results/confusion_Xgboost.png)
+![XGBoost Confusion Matrix](https://raw.githubusercontent.com/Ananddd06/Predictive_Maintenance_Approach_Manufacturing_Systems/main/Results/confusion_Xgboost.png)
 ```
 
 #### Training & Validation Loss
 
 ```markdown
-![Training and Validation Loss](Results/training_validation_loss_xgboost.png)
+![Training and Validation Loss](https://raw.githubusercontent.com/Ananddd06/Predictive_Maintenance_Approach_Manufacturing_Systems/main/Results/training_validation_loss_xgboost.png)
 ```
 
 ## 🏅 The Final Verdict: And the Winner Is...
