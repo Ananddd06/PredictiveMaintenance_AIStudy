@@ -1,5 +1,6 @@
 # 🎯 **INDUSTRIAL AI PREDICTIVE MAINTENANCE**
-## *Complete ML & Deep Learning Pipeline Results*
+
+## _Complete ML & Deep Learning Pipeline Results_
 
 <div align="center">
 
@@ -27,6 +28,7 @@
 <tr><td>
 
 **📈 Dataset Overview**
+
 - **Total Samples**: 10,000 manufacturing records
 - **Features**: 8 critical parameters
 - **Target**: `Failure_Type_Encoded`
@@ -54,13 +56,13 @@
 
 <div align="center">
 
-| 🎛️ **Scaled Features** | 📊 **Range** |
-|------------------------|-------------|
-| Air Temperature (K) | [0, 1] |
-| Process Temperature (K) | [0, 1] |
-| Rotational Speed (rpm) | [0, 1] |
-| Torque (Nm) | [0, 1] |
-| Tool Wear (min) | [0, 1] |
+| 🎛️ **Scaled Features**  | 📊 **Range** |
+| ----------------------- | ------------ |
+| Air Temperature (K)     | [0, 1]       |
+| Process Temperature (K) | [0, 1]       |
+| Rotational Speed (rpm)  | [0, 1]       |
+| Torque (Nm)             | [0, 1]       |
+| Tool Wear (min)         | [0, 1]       |
 
 </div>
 
@@ -86,26 +88,26 @@ pie title Data Split Distribution
 <tr>
 <td>
 
-| Failure Type | Count | % |
-|-------------|-------|---|
-| No Failure | 7,722 | 96.53% |
-| Heat Dissipation | 90 | 1.12% |
-| Overstrain | 62 | 0.78% |
-| Power Failure | 76 | 0.95% |
-| Random Failure | 14 | 0.18% |
-| Tool Wear | 36 | 0.45% |
+| Failure Type     | Count | %      |
+| ---------------- | ----- | ------ |
+| No Failure       | 7,722 | 96.53% |
+| Heat Dissipation | 90    | 1.12%  |
+| Overstrain       | 62    | 0.78%  |
+| Power Failure    | 76    | 0.95%  |
+| Random Failure   | 14    | 0.18%  |
+| Tool Wear        | 36    | 0.45%  |
 
 </td>
 <td>
 
-| Failure Type | Count | % |
-|-------------|-------|---|
-| No Failure | 7,722 | 38.19% |
+| Failure Type     | Count | %      |
+| ---------------- | ----- | ------ |
+| No Failure       | 7,722 | 38.19% |
 | Heat Dissipation | 2,500 | 12.36% |
-| Overstrain | 2,500 | 12.36% |
-| Power Failure | 2,500 | 12.36% |
-| Random Failure | 2,500 | 12.36% |
-| Tool Wear | 2,500 | 12.36% |
+| Overstrain       | 2,500 | 12.36% |
+| Power Failure    | 2,500 | 12.36% |
+| Random Failure   | 2,500 | 12.36% |
+| Tool Wear        | 2,500 | 12.36% |
 
 </td>
 </tr>
@@ -115,14 +117,14 @@ pie title Data Split Distribution
 
 <div align="center">
 
-| 🎯 **Failure Type** | ⚖️ **Weight** | 🎨 **Visual** |
-|---------------------|---------------|---------------|
-| No Failure | 0.436 | 🟢▓▓▓▓ |
-| Heat Dissipation | 1.348 | 🔴████████████ |
-| Overstrain | 1.348 | 🟡████████████ |
-| Power Failure | 1.348 | 🔵████████████ |
-| Random Failure | 1.348 | 🟣████████████ |
-| Tool Wear | 1.348 | 🟠████████████ |
+| 🎯 **Failure Type** | ⚖️ **Weight** | 🎨 **Visual**  |
+| ------------------- | ------------- | -------------- |
+| No Failure          | 0.436         | 🟢▓▓▓▓         |
+| Heat Dissipation    | 1.348         | 🔴████████████ |
+| Overstrain          | 1.348         | 🟡████████████ |
+| Power Failure       | 1.348         | 🔵████████████ |
+| Random Failure      | 1.348         | 🟣████████████ |
+| Tool Wear           | 1.348         | 🟠████████████ |
 
 </div>
 
@@ -134,19 +136,19 @@ pie title Data Split Distribution
 
 <div align="center">
 
-| 🥇 **Rank** | 🤖 **Model** | 🎯 **F1-Score** | 📊 **Performance Bar** |
-|-------------|-------------|-----------------|------------------------|
-| 🥇 **1st** | **XGBoost** | **0.9707** | 🟢████████████████████████████ |
-| 🥈 **2nd** | ExtraTrees | 0.9677 | 🟡███████████████████████████▌ |
-| 🥉 **3rd** | RandomForest | 0.9664 | 🔵██████████████████████████▌ |
-| 4th | DecisionTree | 0.9654 | 🟠██████████████████████████ |
-| 5th | CatBoost | 0.9601 | 🟣█████████████████████████ |
-| 6th | MLP | 0.9408 | 🔴███████████████████████ |
-| 7th | KNN | 0.9257 | 🟤██████████████████████ |
-| 8th | AdaBoost | 0.8930 | ⚫████████████████████ |
-| 9th | SVM | 0.8367 | 🔘██████████████████ |
-| 10th | NaiveBayes | 0.8269 | 🔲█████████████████ |
-| 11th | LogisticRegression | 0.6287 | 🔳████████████ |
+| 🥇 **Rank** | 🤖 **Model**       | 🎯 **F1-Score** | 📊 **Performance Bar**         |
+| ----------- | ------------------ | --------------- | ------------------------------ |
+| 🥇 **1st**  | **XGBoost**        | **0.9707**      | 🟢████████████████████████████ |
+| 🥈 **2nd**  | ExtraTrees         | 0.9677          | 🟡███████████████████████████▌ |
+| 🥉 **3rd**  | RandomForest       | 0.9664          | 🔵██████████████████████████▌  |
+| 4th         | DecisionTree       | 0.9654          | 🟠██████████████████████████   |
+| 5th         | CatBoost           | 0.9601          | 🟣█████████████████████████    |
+| 6th         | MLP                | 0.9408          | 🔴███████████████████████      |
+| 7th         | KNN                | 0.9257          | 🟤██████████████████████       |
+| 8th         | AdaBoost           | 0.8930          | ⚫████████████████████         |
+| 9th         | SVM                | 0.8367          | 🔘██████████████████           |
+| 10th        | NaiveBayes         | 0.8269          | 🔲█████████████████            |
+| 11th        | LogisticRegression | 0.6287          | 🔳████████████                 |
 
 </div>
 
@@ -163,7 +165,7 @@ pie title Data Split Distribution
 🏆 CHAMPION PERFORMANCE:
   Cross-Validation F1: 0.9918
   Test F1: 0.9729
-  
+
 🎛️ OPTIMAL PARAMETERS:
   learning_rate: 0.2
   max_depth: 6
@@ -180,7 +182,7 @@ pie title Data Split Distribution
 📊 PERFORMANCE METRICS:
   Cross-Validation F1: 0.9804
   Test F1: 0.9571
-  
+
 ⚙️ BEST CONFIGURATION:
   max_depth: 20
   min_samples_split: 5
@@ -196,7 +198,7 @@ pie title Data Split Distribution
 🌲 FOREST PERFORMANCE:
   Cross-Validation F1: 0.9779
   Test F1: 0.9590
-  
+
 🔧 TUNED PARAMETERS:
   max_depth: None
   min_samples_leaf: 2
@@ -214,15 +216,15 @@ pie title Data Split Distribution
 
 <div align="center">
 
-| 🤖 **Model** | 🔧 **Optimizer** | 🎯 **Accuracy** | 📊 **F1-Score** | 🏆 **Best Val F1** |
-|-------------|-----------------|-----------------|-----------------|-------------------|
-| **🧠 AdvancedDNN** | **adam** | **94.95%** | **96.10%** | **🏆 99.01%** |
-| 🧠 AdvancedDNN | sgd_momentum | 89.10% | 92.63% | 96.85% |
-| 🧠 AdvancedDNN | rmsprop | 68.80% | 79.33% | 89.44% |
-| 🔄 TabularLSTM | rmsprop | 96.45% | 94.71% | 21.95% |
-| 🔄 TabularTransformer | adam | 96.45% | 94.71% | 81.46% |
-| 🔄 TabularTransformer | sgd_momentum | 85.10% | 90.28% | 94.11% |
-| 🔄 TabularLSTM | adam | 72.55% | 82.10% | 93.11% |
+| 🤖 **Model**          | 🔧 **Optimizer** | 🎯 **Accuracy** | 📊 **F1-Score** | 🏆 **Best Val F1** |
+| --------------------- | ---------------- | --------------- | --------------- | ------------------ |
+| **🧠 AdvancedDNN**    | **adam**         | **94.95%**      | **96.10%**      | **🏆 99.01%**      |
+| 🧠 AdvancedDNN        | sgd_momentum     | 89.10%          | 92.63%          | 96.85%             |
+| 🧠 AdvancedDNN        | rmsprop          | 68.80%          | 79.33%          | 89.44%             |
+| 🔄 TabularLSTM        | rmsprop          | 96.45%          | 94.71%          | 21.95%             |
+| 🔄 TabularTransformer | adam             | 96.45%          | 94.71%          | 81.46%             |
+| 🔄 TabularTransformer | sgd_momentum     | 85.10%          | 90.28%          | 94.11%             |
+| 🔄 TabularLSTM        | adam             | 72.55%          | 82.10%          | 93.11%             |
 
 </div>
 
@@ -298,17 +300,20 @@ pie title Data Split Distribution
 <td>
 
 **🏆 PERFORMANCE**
+
 - Test Accuracy: 94.95%
 - Test F1-Score: 96.10%
 - **Best Val F1: 99.01%** 🎯
 
 **🌟 STRENGTHS**
+
 - 🧠 High Learning Capacity
 - 🔧 Flexible Architecture
 - 📈 Scales with Large Data
 - 🚀 Transfer Learning Ready
 
 **⚠️ CHALLENGES**
+
 - 🎯 Overfitting Risk
 - 🔥 Training Complexity
 - 🐢 Slower Inference
@@ -318,17 +323,20 @@ pie title Data Split Distribution
 <td>
 
 **🏆 PERFORMANCE**
+
 - **Test F1-Score: 97.29%** 🥇
 - Stable Performance
 - Consistent Results
 
 **🌟 STRENGTHS**
+
 - ⚡ Fast Training & Inference
 - 👍 Easy Interpretation
 - 🎯 Handles Imbalanced Data
 - ✅ Production Ready
 
 **⚠️ CHALLENGES**
+
 - 🌳 Limited to Tabular Data
 - 📊 Less Complex Patterns
 - 🔄 Scalability Limits
@@ -341,14 +349,14 @@ pie title Data Split Distribution
 
 <div align="center">
 
-| 🏆 **Aspect** | 🤖 **AdvancedDNN** | 🌲 **XGBoost** | 👑 **Winner** |
-|---------------|-------------------|----------------|---------------|
-| Test F1-Score | 96.10% 🎯 | **97.29%** 🥇 | **XGBoost** 🌲 |
-| Overfitting | Moderate ⚠️ | Low ✅ | **XGBoost** 🌲 |
-| Training Speed | Slow 🐢 | **Fast** ⚡ | **XGBoost** 🌲 |
-| Interpretability | Hard 😕 | **Easy** 👍 | **XGBoost** 🌲 |
-| Production Ready | Complex 🔧 | **Simple** ✅ | **XGBoost** 🌲 |
-| Future Potential | **High** 🚀 | Limited 🌳 | **AdvancedDNN** 🤖 |
+| 🏆 **Aspect**    | 🤖 **AdvancedDNN** | 🌲 **XGBoost** | 👑 **Winner**      |
+| ---------------- | ------------------ | -------------- | ------------------ |
+| Test F1-Score    | 96.10% 🎯          | **97.29%** 🥇  | **XGBoost** 🌲     |
+| Overfitting      | Moderate ⚠️        | Low ✅         | **XGBoost** 🌲     |
+| Training Speed   | Slow 🐢            | **Fast** ⚡    | **XGBoost** 🌲     |
+| Interpretability | Hard 😕            | **Easy** 👍    | **XGBoost** 🌲     |
+| Production Ready | Complex 🔧         | **Simple** ✅  | **XGBoost** 🌲     |
+| Future Potential | **High** 🚀        | Limited 🌳     | **AdvancedDNN** 🤖 |
 
 </div>
 
@@ -430,6 +438,6 @@ graph LR
 
 ---
 
-*Built with ❤️ by J Anand | SRM Institute of Science and Technology*
+_Built with ❤️ by J Anand | SRM Institute of Science and Technology_
 
 </div>
