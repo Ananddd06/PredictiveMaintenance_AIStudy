@@ -56,20 +56,6 @@ weighted avg         0.9703    0.9485    0.9592    2000.0
 
 **Analysis:** A shocking twist\! 😱 Despite a flashy `94.8%` accuracy, the DNN model was a "one-trick pony." It was great at spotting 'No Failure' and 'Overstrain', but it **completely missed 4 out of the 5 failure types\!** It was like a boxer who only knew how to throw one type of punch. This model, unfortunately, is not fit for the championship.
 
-#### Confusion Matrix (Test Set - Failures Only)
-
-```markdown
-![Deep Learning Confusion Matrix](https://raw.githubusercontent.com/Ananddd06/Predictive_Maintenance_Approach_Manufacturing_Systems/main/Results/cf_deep_learning.png)
-```
-
-#### Training & Validation Loss
-
-```markdown
-![Training and Validation Loss](https://raw.githubusercontent.com/Ananddd06/Predictive_Maintenance_Approach_Manufacturing_Systems/main/Results/training_validation_loss_curves.png)
-```
-
-**Analysis:** The training graph shows the model was a diligent student. It learned smoothly, and the validation loss proves it wasn't just guessing. This confirms the problem wasn't a lack of effort, but a fundamental misunderstanding of the task.
-
 ### 🌳 Contender 2: The XGBoost Model
 
 The veteran champion stepped into the ring and delivered a masterclass performance.
@@ -91,18 +77,6 @@ weighted avg         0.9951    0.9943    0.9946   10000.0
 ```
 
 **Analysis:** A truly dominant performance\! 🥇 The XGBoost model landed decisive blows on **every single failure type**. Its **Macro Avg F1-Score of 0.88** is the mark of a true champion, proving it can handle the big guys and the little guys with equal skill. It's not just a good model; it's a reliable partner.
-
-#### Confusion Matrix (Test Set - Failures Only)
-
-```markdown
-![XGBoost Confusion Matrix](https://raw.githubusercontent.com/Ananddd06/Predictive_Maintenance_Approach_Manufacturing_Systems/main/Results/confusion_Xgboost.png)
-```
-
-#### Training & Validation Loss
-
-```markdown
-![Training and Validation Loss](https://raw.githubusercontent.com/Ananddd06/Predictive_Maintenance_Approach_Manufacturing_Systems/main/Results/training_validation_loss_xgboost.png)
-```
 
 ## 🏅 The Final Verdict: And the Winner Is...
 
