@@ -1,16 +1,4 @@
-Of course\! Here is the final, complete project report in Markdown format.
-
-I have now embedded the sections for the **confusion matrices** and updated the report to be a complete, self-contained document that includes all the visuals and data you have generated.
-
----
-
-# 🤖💥 Model Showdown: AI vs. Machine Failure\! 💥🤖
-
-**Date:** October 12, 2025
-**Location:** Coimbatore, Tamil Nadu, India
-**Author:** Anand (with a little help from my AI assistant, Gemini)
-
-## 🚀 The Mission: Predicting the Future of Machines
+# 🚀 The Mission: Predicting the Future of Machines
 
 Welcome to the final report on our mission to build a crystal ball for our equipment\! 🔮 The goal was simple but ambitious: create a smart system that can predict _exactly_ what's about to go wrong with a machine, long before it actually does. By turning sensor data into actionable warnings, we aim to slash downtime, cut costs, and become masters of maintenance\!
 
@@ -70,19 +58,13 @@ weighted avg         0.9703    0.9485    0.9592    2000.0
 
 #### Confusion Matrix (Test Set - Failures Only)
 
-_(You can insert the `confusion_matrix_deep_learning_FINAL_CORRECTED.png` image here)_
+<img width="2838" height="2377" alt="cf_deep_learning" src="https://github.com/user-attachments/assets/5bac6a60-2708-4aa9-bee0-293e49965c3c" />
 
-```markdown
-![Deep Learning Confusion Matrix](/Users/anand/Desktop/FAI/ML_Pipeline/confusion_matrix_deep_learning_FINAL_CORRECTED.png)
-```
 
 #### Training & Validation Loss
 
-_(You can insert the `training_validation_loss_curves.png` image here)_
+<img width="3600" height="2100" alt="training_validation_loss_curves" src="https://github.com/user-attachments/assets/19df6440-d362-4c52-bea6-2f011401011c" />
 
-```markdown
-![Training and Validation Loss](/Users/anand/Desktop/FAI/ML_Pipeline/training_validation_loss_curves.png)
-```
 
 **Analysis:** The training graph shows the model was a diligent student. It learned smoothly, and the validation loss proves it wasn't just guessing. This confirms the problem wasn't a lack of effort, but a fundamental misunderstanding of the task.
 
@@ -110,11 +92,12 @@ weighted avg         0.9951    0.9943    0.9946   10000.0
 
 #### Confusion Matrix (Test Set - Failures Only)
 
-_(You can insert the `confusion_matrix_xgboost.png` image here)_
+<img width="1000" height="800" alt="confusion_Xgboost" src="https://github.com/user-attachments/assets/b5f6996e-bd5d-4dd0-859a-4a07b22881fd" />
 
-```markdown
-![XGBoost Confusion Matrix](/Users/anand/Desktop/FAI/ML_Pipeline/confusion_matrix_xgboost.png)
-```
+#### Training & Validation Loss
+
+<img width="4469" height="1768" alt="training_validation_loss_xgboost" src="https://github.com/user-attachments/assets/9985a029-df18-494b-98e9-4d915751e56e" />
+
 
 ## 🏅 The Final Verdict: And the Winner Is...
 
