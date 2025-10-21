@@ -71,7 +71,7 @@ class_names_all = [LABEL_MAP[l] for l in all_labels]
 print("\n📈 Generating confusion matrix...")
 cm = confusion_matrix(y_true, y_pred, labels=all_labels)
 plt.figure(figsize=(10, 8))
-sns.heatmap(cm, annot=True, fmt='d', cmap='Spectral',
+sns.heatmap(cm, annot=True, fmt='d', cmap='coolwarm',
             xticklabels=class_names_all,
             yticklabels=class_names_all,
             linewidths=1.5, linecolor='black',
