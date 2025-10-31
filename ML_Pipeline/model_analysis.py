@@ -23,12 +23,12 @@ LABEL_MAP = {
 
 # --- DEFINE FILE PATHS ---
 # Input paths
-DATA_PATH = '/Users/anand/Desktop/FAI/Data file/final_preprocessed_df_cleaned.csv'
-MODEL_PATH = '/Users/anand/Desktop/FAI/Model_file/xgboost_analysis_model.pkl'
-SCALER_PATH = '/Users/anand/Desktop/FAI/Model_file/xgboost_analysis_scaler.pkl'
+DATA_PATH = '/Users/anand/Desktop/Predictive_Maintenance_Approach_Manufacturing_Systems/Data file/final_preprocessed_df_cleaned.csv'
+MODEL_PATH = '/Users/anand/Desktop/Predictive_Maintenance_Approach_Manufacturing_Systems/Model_file/xgboost_analysis_model.pkl'
+SCALER_PATH = '/Users/anand/Desktop/Predictive_Maintenance_Approach_Manufacturing_Systems/Model_file/xgboost_analysis_scaler.pkl'
 
 # --- MODIFICATION 1: Define the specific output path ---
-OUTPUT_PATH = '/Users/anand/Desktop/FAI/ML_Pipeline'
+OUTPUT_PATH = '/Users/anand/Desktop/Predictive_Maintenance_Approach_Manufacturing_Systems/ML_Pipeline'
 
 # --- MODIFICATION 2: Create the output directory if it doesn't exist ---
 # This prevents errors if the folder is not already there.
